@@ -5,8 +5,8 @@ class CreateEmployee < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :employee_of_the_month
       t.integer :age
-      t.timestamp :created_at
-      t.timestamp :updated_at
+
+      t.timestamps
     end
     add_foreign_key :employees, :bookstores
   end
