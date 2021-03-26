@@ -1,0 +1,7 @@
+<h1><%= @store.name %></h1>
+
+<% @store.employees.each do |employee| %>
+  <h2><%= employee.name %></h2>
+  <p>Age: <%= employee.age %></p>
+  <p>Employee of the Month: <%= employee.employee_of_the_month %></p>
+<% end %>
