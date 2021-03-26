@@ -15,4 +15,16 @@ RSpec.describe "books index page", type: :feature do
     expect(page).to have_content(book_1.author.name)
     expect(page).to have_content(book_2.name)
   end
+
+  it "can see link to all books page" do
+    visit "/authors"
+
+    expect(page).to have_link('All Books', href: '/books')
+  end
+
+  it "can see link to all authors page" do
+    visit "/authors"
+
+    expect(page).to have_link('All Authors', href: '/authors')
+  end
 end

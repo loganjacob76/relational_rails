@@ -16,4 +16,16 @@ RSpec.describe "authors books page", type: :feature do
     expect(page).to have_content(book_2.fiction)
     expect(page).to have_content(book_2.number_of_pages)
   end
+
+  it "can see link to all books page" do
+    visit "/authors"
+
+    expect(page).to have_link('All Books', href: '/books')
+  end
+
+  it "can see link to all authors page" do
+    visit "/authors"
+
+    expect(page).to have_link('All Authors', href: '/authors')
+  end
 end
