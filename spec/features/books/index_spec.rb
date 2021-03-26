@@ -10,6 +10,9 @@ RSpec.describe "books index page", type: :feature do
     visit "/books"
 
     expect(page).to have_content(book_1.name)
+    expect(page).to have_content(book_1.fiction)
+    expect(page).to have_content(book_1.number_of_pages)
+    expect(page).to have_content(book_1.author.name)
     expect(page).to have_content(book_2.name)
   end
 end
