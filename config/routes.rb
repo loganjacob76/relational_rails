@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/bookstores/:id', to: 'bookstores#show'
 
   get '/employees', to: 'employees#index'
+  get '/employees/:id', to: 'employees#show'
 end
