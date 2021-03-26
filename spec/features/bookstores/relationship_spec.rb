@@ -20,4 +20,11 @@ RSpec.describe 'parent child index page', type: :feature do
     expect(page).to have_content(john.age)
     expect(page).to have_content(bobert.age)
   end
+
+  it "has all links" do
+    visit "/bookstores/#{shop1.id}/employees"
+
+    expect(page).to have_link(href: '/bookstores')
+    expect(page).to have_link(href: '/employees')
+  end
 end

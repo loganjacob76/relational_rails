@@ -12,4 +12,11 @@ RSpec.describe 'employees show page', type: :feature do
     expect(page).to have_content(john.age)
     expect(page).to have_content(john.employed_at)
   end
+
+  it "has all links" do
+    visit "/employees/#{john.id}"
+
+    expect(page).to have_link(href: '/bookstores')
+    expect(page).to have_link(href: '/employees')
+  end
 end

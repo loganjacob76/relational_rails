@@ -10,4 +10,10 @@ RSpec.describe 'bookstores index page', type: :feature do
     expect(page).to have_content(store1.name)
     expect(page).to have_content(store2.name)
   end
+
+  it "has all links" do
+    visit '/bookstores'
+
+    expect(page).to have_link(href: '/employees')
+  end
 end

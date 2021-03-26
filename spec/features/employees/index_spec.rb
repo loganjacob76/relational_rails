@@ -22,4 +22,10 @@ RSpec.describe 'employees index page', type: :feature do
     expect(page).to have_content("Store Employed At: #{store1.name}")
     expect(page).to have_content("Store Employed At: #{store2.name}")
   end
+
+  it "has all links" do
+    visit '/employees'
+
+    expect(page).to have_link(href: '/bookstores')
+  end
 end

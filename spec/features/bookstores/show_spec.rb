@@ -10,4 +10,12 @@ RSpec.describe 'bookstores show page', type: :feature do
     expect(page).to have_content(shop1.has_coffee_shop)
     expect(page).to have_content(shop1.days_open_per_week)
   end
+
+  it "has all links" do
+    visit "/bookstores/#{shop1.id}"
+
+    expect(page).to have_link(href: '/bookstores')
+    expect(page).to have_link(href: '/employees')
+    expect(page).to have_link(href: "/bookstores/#{shop1.id}/employees")
+  end
 end
