@@ -1,0 +1,11 @@
+<%= link_to "All Authors", "/authors" %>
+<%= link_to "All Books", "/books" %>
+
+<h1>All Books(BooksController#index)</h1>
+
+<% @books.each do |book| %>
+<h2><%= book.name %></h2>
+<p>Fiction:<%= book.fiction %></p>
+<p>Number of Pages:<%= book.number_of_pages %></p>
+<p>Author:<%= book.author.name %></p>
+<% end %>
