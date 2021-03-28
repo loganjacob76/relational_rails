@@ -6,3 +6,5 @@
 <p>Best Selling Author: <%= @author.best_selling_author %></p>
 <p>Year First Published: <%= @author.year_first_published %></p>
 <p>Number of Books: <%= @author.books.count %></p>
+
+<%= button_to 'Update Author', "/authors/#{@author.id}/edit", method: :patch %>
