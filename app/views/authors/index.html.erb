@@ -1,4 +1,4 @@
-<%= link_to "All Authors", "/authors" %>
+<%= link_to "All Authors", "/authors" %><br>
 <%= link_to "All Books", "/books" %>
 
 <h1>All Authors</h1>
@@ -7,3 +7,5 @@
 <h2><%= author.name %></h2>
 <p>Created at: <%= author.created_at %></p>
 <% end %>
+
+<%= link_to "Add New Author", "/authors/new" %>
