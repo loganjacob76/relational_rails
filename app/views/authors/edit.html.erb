@@ -1,9 +1,9 @@
-<%= form_with url: "/authors", method: :post, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %><br>
-  <%= form.label :best_selling_author %>
-  <%= form.check_box :best_selling_author, {}, checked = "true", unchecked = "false" %><br>
-  <%= form.label :year_first_published %>
-  <%= form.text_field :year_first_published %><br>
-  <%= form.submit 'Create Author' %>
+<%= form_with url: "/authors/#{@author.id}", method: :patch, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :best_selling_author %>
+  <%= f.check_box :best_selling_author, {}, checked = "true", unchecked = "false" %><br>
+  <%= f.label :year_first_published %>
+  <%= f.text_field :year_first_published %><br>
+  <%= f.submit 'Update Author' %>
 <% end %>
