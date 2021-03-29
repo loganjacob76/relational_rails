@@ -1,0 +1,9 @@
+<%= form_with url: "/books", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :fiction %>
+  <%= form.check_box :fiction, {}, checked = "true", unchecked = "false" %><br>
+  <%= form.label :number_of_pages %>
+  <%= form.text_field :number_of_pages %><br>
+  <%= form.submit 'Create Book' %>
+<% end %>

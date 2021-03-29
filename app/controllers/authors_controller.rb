@@ -7,7 +7,6 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    # Author.create(author_params)
     @author = Author.create(name: params[:name], best_selling_author: params[:best_selling_author], year_first_published: params[:year_first_published])
     redirect_to '/authors'
   end
@@ -22,6 +21,7 @@ class AuthorsController < ApplicationController
   end
 
   def relationship
+    @author = Author.find(params[:id])
     @authors_books = Author.find(params[:id]).books
   end
 

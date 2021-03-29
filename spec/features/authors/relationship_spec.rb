@@ -28,4 +28,12 @@ RSpec.describe "authors books page", type: :feature do
 
     expect(page).to have_link('All Authors', href: '/authors')
   end
+
+  it "can see link to add new book" do
+    author = Author.create!(name: 'Cal Newport', best_selling_author: true, year_first_published: 2005)
+
+    visit "/authors/#{author.id}/books"
+
+    expect(page).to have_link('Create Book', href: "/authors/#{author.id}/books")
+  end
 end

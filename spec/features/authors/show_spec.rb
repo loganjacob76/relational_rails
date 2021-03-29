@@ -31,4 +31,11 @@ RSpec.describe "author show page", type: :feature do
     visit "/authors/#{author_2.id}"
     expect(page).to have_content("Number of Books: #{author_2.books.count}")
   end
+
+  it "can see link to edit author record" do
+    author_1 = Author.create(name: "Stephen King", best_selling_author: true, year_first_published: 1974)
+
+    visit "/authors/#{author_1.id}"
+    expect(page).to have_link("Update Author", href: "/authors/#{author_1.id}/edit")
+  end
 end
