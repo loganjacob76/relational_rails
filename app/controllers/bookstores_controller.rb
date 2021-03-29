@@ -1,6 +1,6 @@
 class BookstoresController < ApplicationController
   def index
-    @stores = Bookstore.all.order(created_at: :desc)
+    @stores = Bookstore.order_by_creation
   end
 
   def show
