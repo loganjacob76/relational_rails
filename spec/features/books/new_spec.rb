@@ -5,7 +5,6 @@ RSpec.describe 'New Book' do
     describe 'When I visit the new book form by clicking a link on the relationship' do
       it 'can create a new book for that author' do
         author = Author.create!(name: 'Jane Austen', best_selling_author: true, year_first_published: 1811)
-
         visit "/authors/#{author.id}/books"
 
         click_link 'Create Book'

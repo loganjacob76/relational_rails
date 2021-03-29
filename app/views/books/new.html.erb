@@ -5,5 +5,7 @@
   <%= form.check_box :fiction, {}, checked = "true", unchecked = "false" %><br>
   <%= form.label :number_of_pages %>
   <%= form.text_field :number_of_pages %><br>
+  <%= form.label :author_id %>
+  <%= form.text_field :author_id %><br>
   <%= form.submit 'Create Book' %>
 <% end %>

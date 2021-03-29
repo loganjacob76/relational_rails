@@ -34,6 +34,6 @@ RSpec.describe "authors books page", type: :feature do
 
     visit "/authors/#{author.id}/books"
 
-    expect(page).to have_link('Create Book', href: "/authors/#{author.id}/books")
+    expect(page).to have_link('Create Book', href: "/authors/#{author.id}/books/new")
   end
 end

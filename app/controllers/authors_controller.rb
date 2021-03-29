@@ -11,11 +11,6 @@ class AuthorsController < ApplicationController
     redirect_to '/authors'
   end
 
-  # private
-  # def author_params
-  #   params.permit(:name, :best_selling_author, :year_first_published)
-  # end
-
   def show
     @author = Author.find(params[:id])
   end
