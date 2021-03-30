@@ -1,0 +1,12 @@
+<h1>New Employee</h1>
+
+<form action="/bookstores/<%= params[:id] %>/employees" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Name:</p>
+    <input type="text" name="employee[name]"><br><br>
+    <input type="checkbox" name="employee[employee_of_the_month]">
+    <label>Employee of the month</label><br>
+    <p>Age:</p>
+    <input type="number" name="employee[age]" min="16"><br><br>
+    <input type="submit" value="Create Child">
+</form>

@@ -1,0 +1,12 @@
+<form action="/bookstores/<%= @store.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value='PATCH'>
+    <h3>Edit</h3>
+    <p>Name:</p>
+    <input type="text" name="bookstore[name]" value="<%= @store.name %>"><br><br>
+    <input type="checkbox" name="bookstore[has_coffee_shop]" <%= "checked" if @store.has_coffee_shop %>>
+    <label>Has a coffee shop</label><br>
+    <p>Days open per week:</p>
+    <input type="number" name="bookstore[days_open_per_week]" min="1" max="7" value="<%= @store.days_open_per_week %>"><br>
+    <br><input type="submit">
+</form>

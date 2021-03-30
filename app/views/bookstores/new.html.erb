@@ -1,0 +1,12 @@
+<h2>New Bookstore</h2>
+
+<form action="/bookstores" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Name:</p>
+    <input type="text" name="bookstore[name]"><br><br>
+    <input type="checkbox" name="bookstore[has_coffee_shop]" id="boolean">
+    <label for="boolean">Has a coffee shop</label>
+    <p>Days open per week:</p>
+    <input type="number" name="bookstore[days_open_per_week]" min="1" max="7"><br>
+    <input type="submit" value="Submit">
+</form>

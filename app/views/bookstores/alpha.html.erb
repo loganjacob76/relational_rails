@@ -3,7 +3,7 @@
 
 <h1><%= @store.name %></h1>
 
-<% @store.employees.each do |employee| %>
+<% @store.alphabetized_employees.each do |employee| %>
   <h2 style="display:inline;margin-right:1em;"><%= employee.name %></h2>
   <%= link_to 'Update Employee', "/employees/#{employee.id}/edit" %>
   <p>Age: <%= employee.age %></p>
@@ -11,4 +11,4 @@
 <% end %> <br><br>
 
 <a href="/bookstores/<%= @store.id %>/employees/new">Create Employee</a>
-<%= button_to 'Sort Alphabetically', "/bookstores/#{@store.id}/employees", method: :patch %>
+<%= button_to 'Unsort', "/bookstores/#{@store.id}/employees", method: :get %>
