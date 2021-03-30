@@ -1,7 +1,7 @@
 <%= link_to "All Authors", "/authors" %><br>
 <%= link_to "All Books", "/books" %><br>
 
-<% @author.author_books.each do |book| %>
+<% @author.alphabetical_books.each do |book| %>
   <h2><%= book.name %></h2>
   <p>Fiction: <%= book.fiction %></p>
   <p>Number of Pages: <%= book.number_of_pages %></p>
@@ -9,4 +9,4 @@
 <% end %><br><br>
 
 <%= link_to 'Create Book', "/authors/#{@author.id}/books/new" %><br><br>
-<%= button_to 'Sort Alphabetically', "/authors/#{@author.id}/books", method: :patch %>
+<%= button_to 'Unsort', "/authors/#{@author.id}/books", method: :get %>

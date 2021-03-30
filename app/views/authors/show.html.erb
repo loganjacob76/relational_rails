@@ -1,8 +1,10 @@
-<%= link_to "All Books by #{@author.name}", "/authors/#{@author.id}/books" %>
-<%= link_to "All Authors", "/authors" %>
+<%= link_to "All Books by #{@author.name}", "/authors/#{@author.id}/books" %><br>
+<%= link_to "All Authors", "/authors" %><br>
 <%= link_to "All Books", "/books" %>
 
 <h2><%= @author.name %></h2>
 <p>Best Selling Author: <%= @author.best_selling_author %></p>
 <p>Year First Published: <%= @author.year_first_published %></p>
-<p>Number of Books: <%= @author.books.count %></p>
+<p>Number of Books: <%= @author.book_count %></p>
+
+<%= link_to 'Update Author', "/authors/#{@author.id}/edit" %>

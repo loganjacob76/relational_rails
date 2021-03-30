@@ -1,7 +1,9 @@
-<%= link_to "All Authors", "/authors" %>
+<%= link_to "All Authors", "/authors" %><br>
 <%= link_to "All Books", "/books" %>
 
 <h2><%= @book.name %></h2>
 <p>Fiction: <%= @book.fiction %></p>
 <p>Number of Pages: <%= @book.number_of_pages %></p>
 <p>Author: <%= @book.author.name %></p>
+
+<%= link_to 'Update Book', "/books/#{@book.id}/edit" %>

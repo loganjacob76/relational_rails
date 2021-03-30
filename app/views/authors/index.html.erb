@@ -1,9 +1,12 @@
-<%= link_to "All Authors", "/authors" %>
+<%= link_to "All Authors", "/authors" %><br>
 <%= link_to "All Books", "/books" %>
 
 <h1>All Authors</h1>
 
 <% @authors.each do |author| %>
-<h2><%= author.name %></h2>
-<p>Created at: <%= author.created_at %></p>
-<% end %>
+<h2 style="display:inline;"><%= author.name %></h2>
+<%= link_to 'Edit Author', "/authors/#{author.id}/edit" %>
+<p style="display:inline;">Created at: <%= author.created_at %></p><br><br>
+<% end %><br>
+
+<%= link_to "Add New Author", "/authors/new" %>
