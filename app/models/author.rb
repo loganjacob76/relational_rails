@@ -6,6 +6,6 @@ class Author < ApplicationRecord
   end
 
   def author_books
-    books
+    books.order(:name)
   end
 end
