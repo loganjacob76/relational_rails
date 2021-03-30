@@ -20,4 +20,22 @@ class EmployeesController < ApplicationController
     employee.save
     redirect_to "/bookstores/#{params[:bookstore_id]}/employees"
   end
+
+  def edit
+    @employee = Employee.find(params[:id])
+  end
+
+  def update
+    employee = Employee.update({
+      name: employee_params[:name],
+      age: employee_params[:age],
+      bookstore_id: employee_params[:bookstore_id],
+      employee_of_the_month: employee_params[:employee_of_the_month].to_i > 0
+    })
+    redirect_to "/employees/#{params[:id]}"
+  end
+
+  def employee_params
+    params.permit(:bookstore_id, :name, :employee_of_the_month, :age)
+  end
 end

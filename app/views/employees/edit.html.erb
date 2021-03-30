@@ -1,0 +1,13 @@
+<h1><%= @employee.name %></h1>
+
+<%= form_with url: "/employees/#{@employee.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %> <br>
+    <%= form.text_field :name, value: @employee.name %> <br><br>
+    <%= form.label :age %> <br>
+    <%= form.number_field :age, min: 16, value: @employee.age %> <br><br>
+    <%= form.check_box :employee_of_the_month, checked: @employee.employee_of_the_month %>
+    <%= form.label :employee_of_the_month %> <br><br>
+    <%= form.label :bookstore_id %> <br>
+    <%= form.number_field :bookstore_id, min: 1, value: @employee.bookstore_id %><br><br>
+    <%= form.submit 'Update Employee' %> 
+<% end %>
