@@ -17,8 +17,6 @@ class AuthorsController < ApplicationController
 
   def relationship
     @author = Author.find(params[:id])
-    # @authors_books = Author.find(params[:id]).books
-    # @authors_books = Author.find(params[:id]).books.order(:name)
   end
 
   def edit
@@ -29,5 +27,9 @@ class AuthorsController < ApplicationController
     author = Author.find(params[:id])
     author.update(name: params[:name], best_selling_author: params[:best_selling_author], year_first_published: params[:year_first_published])
     redirect_to "/authors/#{author.id}"
+  end
+
+  def alpha
+    @author = Author.find(params[:author_id])
   end
 end

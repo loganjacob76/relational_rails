@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe "books index page", type: :feature do
   it "can see names of all books" do
     author_1 = Author.create(name: "Stephen King", best_selling_author: true, year_first_published: 1974)
-    author_2 = Author.create(name: 'Cal Newport', best_selling_author: true, year_first_published: 2005)
-    book_1 = Book.create!(name: 'Deep Work', fiction: false, number_of_pages: 304, author: author_1)
-    book_2 = Book.create!(name: 'Digital Minimalism', fiction: false, number_of_pages: 302, author: author_2)
+    book_1 = Book.create!(name: 'The Shining', fiction: true, number_of_pages: 447, author: author_1)
+    book_2 = Book.create!(name: 'It', fiction: true, number_of_pages: 1000, author: author_1)
 
     visit "/books"
 
