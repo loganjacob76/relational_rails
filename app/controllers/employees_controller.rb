@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.all
+    @employees = Employee.where(employee_of_the_month: 'true')
   end
 
   def show
@@ -26,7 +26,8 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    employee = Employee.update({
+    employee = Employee.find(params[:id])
+    employee.update({
       name: employee_params[:name],
       age: employee_params[:age],
       bookstore_id: employee_params[:bookstore_id],
