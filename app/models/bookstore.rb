@@ -4,4 +4,8 @@ class Bookstore < ApplicationRecord
   def self.order_by_creation
     order(created_at: :desc)
   end
+
+  def alphabetized_employees
+    employees.order(:name)
+  end
 end

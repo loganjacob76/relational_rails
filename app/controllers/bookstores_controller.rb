@@ -37,4 +37,8 @@ class BookstoresController < ApplicationController
       })
     redirect_to "/bookstores/#{params[:id]}"
   end
+
+  def alpha
+    @store = Bookstore.find(params[:id])
+  end
 end

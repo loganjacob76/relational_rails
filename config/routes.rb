@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/bookstores/:id/employees', to: 'bookstores#relationship'
   get '/bookstores/:id/employees/new', to: 'employees#new'
   post '/bookstores/:bookstore_id/employees', to: 'employees#create'
+  patch '/bookstores/:id/employees', to: 'bookstores#alpha'
 
   get '/employees', to: 'employees#index'
   get '/employees/:id', to: 'employees#show'
