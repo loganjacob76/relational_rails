@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   patch '/authors/:id', to: 'authors#update'
   get '/authors/:id/books', to: 'authors#relationship'
   get '/authors/:id/books/new', to: 'books#new'
-  post '/books', to: 'books#create'
+  post '/authors/:author_id/books', to: 'books#create'
 
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
+  get '/books/:id/edit', to: 'books#edit'
+  patch '/books/:id', to: 'books#update'
 
   get '/bookstores', to: 'bookstores#index'
   get '/bookstores/:id', to: 'bookstores#show'

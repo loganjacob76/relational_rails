@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.all.order(:created_at)
+    @authors = Author.order_by_created_at
   end
 
   def new
@@ -17,7 +17,8 @@ class AuthorsController < ApplicationController
 
   def relationship
     @author = Author.find(params[:id])
-    @authors_books = Author.find(params[:id]).books
+    # @authors_books = Author.find(params[:id]).books
+    # @authors_books = Author.find(params[:id]).books.order(:name)
   end
 
   def edit
