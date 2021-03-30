@@ -5,7 +5,7 @@
 <h2><%= book.name %></h2>
 <p>Fiction: <%= book.fiction %></p>
 <p>Number of Pages: <%= book.number_of_pages %></p>
-<%= link_to 'Edit Book', "/books/#{book.id}" %>
-<% end %>
+<%= link_to 'Edit Book', "/books/#{book.id}/edit" %>
+<% end %><br><br>
 
 <%= link_to 'Create Book', "/authors/#{@author.id}/books/new" %>

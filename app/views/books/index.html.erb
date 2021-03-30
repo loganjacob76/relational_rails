@@ -8,4 +8,5 @@
 <p>Fiction: <%= book.fiction %></p>
 <p>Number of Pages: <%= book.number_of_pages %></p>
 <p>Author: <%= book.author.name %></p>
+<%= link_to 'Edit Book', "/books/#{book.id}/edit" %>
 <% end %>
