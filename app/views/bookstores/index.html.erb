@@ -5,5 +5,6 @@
 
 <% @stores.each do |store| %>
   <h3 style="display:inline;"><%= store.name %></h3>
-  <p style="display:inline;">Created At: <%= store.created_at %></p><br><br>
+  <p style="display:inline;">Created At: <%= store.created_at %></p>
+  <%= link_to "Update Bookstore", "/bookstores/#{store.id}/edit" %> <br><br>
 <% end %>
