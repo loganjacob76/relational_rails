@@ -42,7 +42,6 @@ group :development, :test do
   gem 'pry'
   gem 'orderly'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'orderly'
 end
 
 group :development do

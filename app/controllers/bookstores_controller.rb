@@ -41,4 +41,9 @@ class BookstoresController < ApplicationController
   def alpha
     @store = Bookstore.find(params[:id])
   end
+  
+  def destroy
+    Bookstore.destroy(params[:id])
+    redirect_to '/bookstores'
+  end
 end
