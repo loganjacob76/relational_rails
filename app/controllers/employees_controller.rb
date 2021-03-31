@@ -39,4 +39,9 @@ class EmployeesController < ApplicationController
   def employee_params
     params.permit(:bookstore_id, :name, :employee_of_the_month, :age)
   end
+
+  def destroy
+    Employee.destroy(params[:id])
+    redirect_to '/employees'
+  end
 end

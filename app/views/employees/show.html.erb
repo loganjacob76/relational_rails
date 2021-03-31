@@ -7,3 +7,4 @@
 <p>Employee of the Month: <%= @employee.employee_of_the_month %></p>
 
 <a href="/employees/<%= @employee.id %>/edit">Update Employee</a>
+<%= button_to "Delete Employee", "/employees/#{@employee.id}", method: :delete %>
