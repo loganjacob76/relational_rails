@@ -9,6 +9,12 @@ class BookstoresController < ApplicationController
 
   def relationship
     @store = Bookstore.find(params[:id])
+    
+    if params[:age] != "" && !params[:age].nil?
+      @employees = @store.employees_by_age(params[:age])
+    else
+      @employees = @store.employees
+    end
   end
 
   def new

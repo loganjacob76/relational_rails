@@ -8,4 +8,8 @@ class Bookstore < ApplicationRecord
   def alphabetized_employees
     employees.order(:name)
   end
+
+  def employees_by_age(number)
+    employees.where('age > ?', number)
+  end
 end
