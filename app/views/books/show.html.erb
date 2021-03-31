@@ -6,4 +6,5 @@
 <p>Number of Pages: <%= @book.number_of_pages %></p>
 <p>Author: <%= @book.author.name %></p>
 
-<%= link_to 'Update Book', "/books/#{@book.id}/edit" %>
+<%= link_to 'Update Book', "/books/#{@book.id}/edit" %><br><br>
+<%= button_to 'Delete Book', "/books/#{@book.id}", method: :delete %>

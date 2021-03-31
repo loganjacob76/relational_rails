@@ -7,4 +7,5 @@
 <p>Year First Published: <%= @author.year_first_published %></p>
 <p>Number of Books: <%= @author.book_count %></p>
 
-<%= link_to 'Update Author', "/authors/#{@author.id}/edit" %>
+<%= link_to 'Update Author', "/authors/#{@author.id}/edit" %><br><br>
+<%= button_to 'Delete Author', "/authors/#{@author.id}", method: :delete %>

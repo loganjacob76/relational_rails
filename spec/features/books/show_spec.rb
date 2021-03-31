@@ -25,4 +25,17 @@ RSpec.describe "books show page", type: :feature do
 
     expect(page).to have_link('All Authors', href: '/authors')
   end
+
+  it 'I can delete a book' do
+    author = Author.create(name: 'Cal Newport', best_selling_author: true, year_first_published: 2005)
+    book = Book.create!(name: 'Deep Work', fiction: false, number_of_pages: 304, author: author)
+
+    visit "/books/#{book.id}"
+
+    click_button 'Delete Book'
+
+    expect(current_path).to eq('/books')
+    expect(page).to_not have_content(book.name)
+    expect(page).to_not have_button('Delete')
+  end
 end

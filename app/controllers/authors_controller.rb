@@ -32,4 +32,10 @@ class AuthorsController < ApplicationController
   def alpha
     @author = Author.find(params[:author_id])
   end
+
+  def destroy
+    @author = Author.find(params[:id])
+    @author.destroy
+    redirect_to '/authors'
+  end
 end

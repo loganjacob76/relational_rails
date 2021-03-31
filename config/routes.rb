@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   get '/authors/:id/books/new', to: 'books#new'
   post '/authors/:author_id/books', to: 'books#create'
   patch '/authors/:author_id/books', to: 'authors#alpha'
+  delete '/authors/:id', to: 'authors#destroy'
 
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
   get '/books/:id/edit', to: 'books#edit'
   patch '/books/:id', to: 'books#update'
+  delete '/books/:id', to: 'books#destroy'
 
   get '/bookstores', to: 'bookstores#index'
   get '/bookstores/new', to: 'bookstores#new'

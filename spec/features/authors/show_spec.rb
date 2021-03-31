@@ -38,4 +38,16 @@ RSpec.describe "author show page", type: :feature do
     visit "/authors/#{author_1.id}"
     expect(page).to have_link("Update Author", href: "/authors/#{author_1.id}/edit")
   end
+
+  it 'I can delete an artist' do
+    author_1 = Author.create(name: "Jane Austen", best_selling_author: true, year_first_published: 1811)
+
+    visit "/authors/#{author_1.id}"
+
+    click_button 'Delete Author'
+
+    expect(current_path).to eq('/authors')
+    expect(page).to_not have_content(author_1.name)
+    expect(page).to_not have_button('Delete')
+  end
 end
