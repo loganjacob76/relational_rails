@@ -14,4 +14,4 @@ DTR: https://docs.google.com/document/d/13y_eIbSoXiqyaD-yq3C5dmhDDZIxNwpOrElkvDO
 Interactive web pages designed to explore the relationships between bookstores and employees as well as authors and books. Users can add, edit, and delete data as well as sort alphabetically and by numerical criteria.
 
 #### Schema
-![image](/Users/gjc/Pictures/relational_rails_tables.png)
+![image](https://user-images.githubusercontent.com/57960885/113239367-3b129c80-9270-11eb-930e-8d386792502d.png)
