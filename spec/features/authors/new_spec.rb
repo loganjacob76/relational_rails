@@ -12,6 +12,7 @@ RSpec.describe 'New Author page' do
         expect(page).to have_field('Best selling author', checked: false)
 
         fill_in 'Name', with: 'Stephen King'
+        fill_in 'Year first published', with: '1974'
         check('Best selling author', allow_label_click: true)
         click_on 'Create Author'
 

@@ -14,6 +14,7 @@ RSpec.describe 'New Book' do
         expect(current_path).to eq("/authors/#{@author.id}/books/new")
 
         fill_in 'Name', with: 'Persuation'
+        fill_in 'Number of pages', with: '300'
         click_on 'Create Book'
 
         expect(current_path).to eq("/authors/#{@author.id}/books")

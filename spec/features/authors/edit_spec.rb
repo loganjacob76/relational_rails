@@ -15,11 +15,12 @@ RSpec.describe 'Edit Author' do
 
         expect(current_path).to eq("/authors/#{@author_1.id}/edit")
 
-        fill_in 'Name', with: 'S. King'
+        fill_in 'Name', with: 'S King'
+        fill_in 'Year first published', with: '1974'
         click_on 'Update Author'
 
         expect(current_path).to eq("/authors/#{@author_1.id}")
-        expect(page).to have_content('S. King')
+        expect(page).to have_content('S King')
       end
     end
   end
