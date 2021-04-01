@@ -1,7 +1,5 @@
 # README
 
-<!-- ![image](https://user-images.githubusercontent.com/75458154/112358404-ef6f5a00-8c95-11eb-9ff3-7f516c31eda5.png) -->
-# Relational Rails Project
 ### Logan Anderson & Gaelyn Cooper  
 DTR: https://docs.google.com/document/d/13y_eIbSoXiqyaD-yq3C5dmhDDZIxNwpOrElkvDO3iH0/edit?usp=sharing
 

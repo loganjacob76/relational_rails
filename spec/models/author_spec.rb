@@ -9,6 +9,8 @@ RSpec.describe Author, type: :model do
 
   describe 'relationships' do
     it { should have_many :books}
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :year_first_published }
   end
 
   describe 'instance methods' do

@@ -1,6 +1,9 @@
 class Author < ApplicationRecord
   has_many :books, dependent: :destroy
 
+  validates_presence_of :name, :year_first_published
+  validates :best_selling_author, inclusion: [true,false]
+
   def self.order_by_created_at
     order(created_at: :DESC)
   end

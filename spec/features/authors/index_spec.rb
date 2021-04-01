@@ -31,12 +31,6 @@ RSpec.describe "authors index page", type: :feature do
     expect(page).to have_link('All Authors', href: '/authors')
   end
 
-  it "can see link to all books by author page" do
-    visit "/authors/#{@author_1.id}"
-
-    expect(page).to have_link("All Books by #{@author_1.name}", href: "/authors/#{@author_1.id}/books")
-  end
-
   it "can see link to create a new author record" do
     visit "/authors"
 

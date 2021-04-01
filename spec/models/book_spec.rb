@@ -10,6 +10,8 @@ RSpec.describe Book, type: :model do
 
   describe 'relationship' do
     it { should belong_to :author }
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :number_of_pages }
   end
 
   describe 'class methods' do

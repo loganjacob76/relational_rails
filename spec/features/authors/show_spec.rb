@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "author show page", type: :feature do
   before :each do
     @author_1 = Author.create(name: "Stephen King", best_selling_author: true, year_first_published: 1974)
-    @author_2 = Author.create(name: 'Cal Newport', best_selling_author: true, year_first_published: 2005)
   end
   it "can see info of author with specified id" do
 
@@ -25,9 +24,15 @@ RSpec.describe "author show page", type: :feature do
     expect(page).to have_link('All Authors', href: '/authors')
   end
 
+  it "can see link to all books by author page" do
+    visit "/authors/#{@author_1.id}"
+
+    expect(page).to have_link("All Books by #{@author_1.name}", href: "/authors/#{@author_1.id}/books")
+  end
+
   it "can see number of books by author" do
-    visit "/authors/#{@author_2.id}"
-    expect(page).to have_content("Number of Books: #{@author_2.books.count}")
+    visit "/authors/#{@author_1.id}"
+    expect(page).to have_content("Number of Books: #{@author_1.books.count}")
   end
 
   it "can see link to edit author record" do
@@ -42,6 +47,7 @@ RSpec.describe "author show page", type: :feature do
 
     expect(current_path).to eq('/authors')
     expect(page).to_not have_content(@author_1.name)
+    expect(page).to_not have_content(@author_1.created_at)
     expect(page).to_not have_button('Delete')
   end
 end
