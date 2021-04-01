@@ -4,7 +4,7 @@
 <h1>All Authors</h1>
 
 <% @authors.each do |author| %>
-<h2 style="display:inline;"><%= author.name %></h2>
+<h2 style="display:inline;"><%= link_to "#{author.name}", "/authors/#{author.id}" %></h2>
 <%= link_to 'Edit Author', "/authors/#{author.id}/edit" %>
 <p style="display:inline;">Created at: <%= author.created_at %></p><br><br>
 <% end %><br>

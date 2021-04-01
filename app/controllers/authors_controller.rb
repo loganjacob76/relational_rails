@@ -17,6 +17,14 @@ class AuthorsController < ApplicationController
 
   def relationship
     @author = Author.find(params[:id])
+
+    if params[:number_of_pages] == ""
+      @books = @author.author_books
+    elsif params[:number_of_pages]
+      @books = @author.page_limit(params[:number_of_pages])
+    else
+      @books = @author.author_books
+    end
   end
 
   def edit
@@ -31,5 +39,11 @@ class AuthorsController < ApplicationController
 
   def alpha
     @author = Author.find(params[:author_id])
+  end
+
+  def destroy
+    @author = Author.find(params[:id])
+    @author.destroy
+    redirect_to '/authors'
   end
 end

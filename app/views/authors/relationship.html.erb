@@ -1,12 +1,19 @@
 <%= link_to "All Authors", "/authors" %><br>
 <%= link_to "All Books", "/books" %><br>
 
-<% @author.author_books.each do |book| %>
+<% @books.each do |book| %>
   <h2><%= book.name %></h2>
   <p>Fiction: <%= book.fiction %></p>
   <p>Number of Pages: <%= book.number_of_pages %></p>
+  <%= button_to 'Delete Book', "/books/#{book.id}", method: :delete %>
   <%= link_to 'Edit Book', "/books/#{book.id}/edit" %>
 <% end %><br><br>
 
 <%= link_to 'Create Book', "/authors/#{@author.id}/books/new" %><br><br>
-<%= button_to 'Sort Alphabetically', "/authors/#{@author.id}/books", method: :patch %>
+<%= button_to 'Sort Alphabetically', "/authors/#{@author.id}/books", method: :patch %><br>
+
+<%= form_with url: "/authors/#{@author.id}/books", method: :get, local: true do |f| %>
+  <%= f.label :number_of_pages, "Search by Page Number Limit" %>
+  <%= f.number_field :number_of_pages, min: 50 %><br>
+  <%= f.submit 'Search' %>
+<% end %>
