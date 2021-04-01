@@ -26,10 +26,6 @@ RSpec.describe "author show page", type: :feature do
   end
 
   it "can see number of books by author" do
-    @author_2 = Author.create!(name: 'Cal Newport', best_selling_author: true, year_first_published: 2005)
-    book_1 = Book.create!(name: 'Deep Work', fiction: false, number_of_pages: 304, author: @author_2)
-    book_2 = Book.create!(name: 'Digital Minimalism', fiction: false, number_of_pages: 302, author: @author_2)
-
     visit "/authors/#{@author_2.id}"
     expect(page).to have_content("Number of Books: #{@author_2.books.count}")
   end
@@ -41,7 +37,7 @@ RSpec.describe "author show page", type: :feature do
     expect(page).to have_link("Update Author", href: "/authors/#{@author_1.id}/edit")
   end
 
-  it 'I can delete an artist' do
+  it 'can delete an author' do
     @author_1 = Author.create(name: "Jane Austen", best_selling_author: true, year_first_published: 1811)
 
     visit "/authors/#{@author_1.id}"
