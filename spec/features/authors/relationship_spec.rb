@@ -39,6 +39,12 @@ RSpec.describe "authors books page", type: :feature do
     expect(page).to have_link('Create Book', href: "/authors/#{@author.id}/books/new")
   end
 
+  it 'can sort books alphabetically' do
+    visit "/authors/#{@author.id}/books"
+
+    expect(@author.alphabetical_books).to eq([@book_1, @book_2, @book_3])
+  end
+
   it "can show only books that have more that specified number of pages" do
     visit "/authors/#{@author.id}/books"
 
