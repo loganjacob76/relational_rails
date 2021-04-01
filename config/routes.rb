@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/bookstores/:id/edit', to: 'bookstores#edit'
   post '/bookstores', to: 'bookstores#create'
   patch '/bookstores/:id', to: 'bookstores#update'
+  delete '/bookstores/:id', to: 'bookstores#destroy'
 
   get '/bookstores/:id/employees', to: 'bookstores#relationship'
   get '/bookstores/:id/employees/new', to: 'employees#new'
@@ -31,4 +32,5 @@ Rails.application.routes.draw do
   get '/employees/:id', to: 'employees#show'
   get '/employees/:id/edit', to: 'employees#edit'
   patch '/employees/:id', to: 'employees#update'
+  delete '/employees/:id', to: 'employees#destroy'
 end

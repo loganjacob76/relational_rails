@@ -9,3 +9,4 @@
 <a href="/bookstores/<%= @store.id %>/employees">Employee Information</a>
 
 <a href="/bookstores/<%= @store.id %>/edit">Update Bookstore</a>
+<%= button_to "Delete Bookstore", "/bookstores/#{@store.id}", method: :delete %>

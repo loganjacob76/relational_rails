@@ -9,6 +9,14 @@ class BookstoresController < ApplicationController
 
   def relationship
     @store = Bookstore.find(params[:id])
+
+    if params[:age] == ""
+      @employees = @store.employees
+    elsif params[:age]
+      @employees = @store.employees_by_age(params[:age].to_i)
+    else
+      @employees = @store.employees
+    end
   end
 
   def new
@@ -40,5 +48,10 @@ class BookstoresController < ApplicationController
 
   def alpha
     @store = Bookstore.find(params[:id])
+  end
+  
+  def destroy
+    Bookstore.destroy(params[:id])
+    redirect_to '/bookstores'
   end
 end

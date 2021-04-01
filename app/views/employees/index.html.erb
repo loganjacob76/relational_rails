@@ -3,7 +3,7 @@
 <h1>All Employees</h1>
 
 <% @employees.each do |employee| %>
-  <h2><%= employee.name %></h2>
+  <h2><%= link_to employee.name, "/employees/#{employee.id}" %></h2>
   <p>Age: <%= employee.age %></p>
   <p>Store Employed At: <%= employee.employed_at %></p>
   <p>Employee of the Month: <%= employee.employee_of_the_month %></p>
