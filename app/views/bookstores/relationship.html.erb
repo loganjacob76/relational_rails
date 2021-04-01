@@ -13,7 +13,7 @@
 <a href="/bookstores/<%= @store.id %>/employees/new">Create Employee</a>
 <%= button_to 'Sort Alphabetically', "/bookstores/#{@store.id}/employees", method: :patch %>
 <br>
-<%= form_with url: "/bookstores/#{@store.id}/employees", method: :get do |form| %>
+<%= form_with url: "/bookstores/#{@store.id}/employees", method: :get, local: true do |form| %>
   <%= form.label :age, "Find employees older than:" %>
   <%= form.number_field :age, min: 16 %>
   <%= form.submit "Search" %>
