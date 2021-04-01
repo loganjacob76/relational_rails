@@ -31,15 +31,11 @@ RSpec.describe "author show page", type: :feature do
   end
 
   it "can see link to edit author record" do
-    @author_1 = Author.create(name: "Stephen King", best_selling_author: true, year_first_published: 1974)
-
     visit "/authors/#{@author_1.id}"
     expect(page).to have_link("Update Author", href: "/authors/#{@author_1.id}/edit")
   end
 
   it 'can delete an author' do
-    @author_1 = Author.create(name: "Jane Austen", best_selling_author: true, year_first_published: 1811)
-
     visit "/authors/#{@author_1.id}"
 
     click_button 'Delete Author'
